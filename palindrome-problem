@@ -1,0 +1,21 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        b = -1
+        p = []
+        y = str(x)
+        for _ in range(len(y)):
+            print(y)
+            f = y[b]
+            b-=1
+            p.append(f)
+        
+        for _ in p:
+            if _ == '-':
+                p.remove('-')
+            
+        backward_number = int(''.join(p))
+        if backward_number == x:
+            return True
+        else:
+            return False
+        
