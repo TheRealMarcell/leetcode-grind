@@ -1,0 +1,15 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        out = []
+        for num in nums:
+            for x in range(nums.index(num)+1, (len(nums))):
+                num_after = nums[x]
+                sum = num + num_after        
+                if sum == target:
+                    out.append(nums.index(num))
+                    if nums.index(num) == nums.index(num_after):
+                        out.append(nums.index(num_after, nums.index(num)+1))
+                    else:
+                        out.append(nums.index(num_after))
+                    return out
+                
